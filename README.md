@@ -2,8 +2,14 @@
 
 This repository contains the full implementation for the research paper:
 
-**"Explainable Deep Learning Framework for Early Detection of Diabetic Retinopathy in Retinal Imaging: A Scalable Approach for Clinical and Rural Deployment"**  
-_A solo-author study by SK Rakib Ul Islam Rahat_
+**"Explainable Deep Learning Framework for Early Detection of Diabetic Retinopathy in Retinal Imaging: A Scalable Approach for Clinical and Rural Deployment"**
+
+### 👥 Authors:
+- Md Reazul Islam Karim  
+- Yasin Arafat  
+- Prof. Makul Mahajan  
+- Prof. Dr. Murtaza Hussain *(Research Advisor)*  
+- SK Rakib Ul Islam Rahat
 
 ---
 
@@ -11,7 +17,7 @@ _A solo-author study by SK Rakib Ul Islam Rahat_
 
 This project presents a multimodal and explainable deep learning framework that combines:
 
-- **High-resolution fundus images** (from APTOS 2019)
+- **High-resolution fundus images** (APTOS 2019)
 - **Simulated clinical metadata** (age, HbA1c, BP, BMI, etc.)
 - **EfficientNetB0** for image feature extraction
 - **MLP** for metadata fusion
