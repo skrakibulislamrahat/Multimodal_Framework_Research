@@ -1,45 +1,33 @@
-# An Explainable Multimodal Fusion Framework for Diabetic Retinopathy Detection
+# Multimodal_Framework_Research
 
-This repository contains the full Colab notebook, model results, and Grad-CAM visualizations for our study on early detection of diabetic retinopathy (DR) using a multimodal deep learning framework.
+This repository contains the full implementation for the research paper:
 
-## 🔍 Objective
+**"Explainable Deep Learning Framework for Early Detection of Diabetic Retinopathy in Retinal Imaging: A Scalable Approach for Clinical and Rural Deployment"**  
+_A solo-author study by SK Rakib Ul Islam Rahat_
 
-To develop an explainable AI system that combines retinal fundus images and simulated clinical features (e.g., HbA1c, blood pressure, duration of diabetes) for accurate DR classification and real-world deployment in rural and resource-constrained settings.
+---
 
-## 📁 Contents
+## 🧠 Overview
 
-- `DR_Multimodal_Fusion_Final.ipynb` — the complete Colab notebook with:
-  - EfficientNetB0 + MLP fusion model
-  - Image preprocessing
-  - Clinical metadata simulation
-  - Grad-CAM visualization
-  - Evaluation metrics (accuracy, F1-score, AUC)
-- `/figures/` — Grad-CAM outputs for Moderate and Proliferative DR
-- `results/` — optional CSV or logs of predictions (if any)
+This project presents a multimodal and explainable deep learning framework that combines:
 
-## 🧠 Model Overview
+- **High-resolution fundus images** (from APTOS 2019)
+- **Simulated clinical metadata** (age, HbA1c, BP, BMI, etc.)
+- **EfficientNetB0** for image feature extraction
+- **MLP** for metadata fusion
+- **Grad-CAM** and **SHAP** for interpretability
 
-- Visual input: APTOS 2019 fundus images (n=3,662)
-- Tabular input: 5 simulated features per patient
-- Model: Dual-branch CNN + dense fusion
-- Metrics:
-  - **Val Accuracy**: 81.3%
-  - **F1-Score**: 0.80 (weighted)
-  - **AUC**: 0.936
+The model is evaluated through:
+- ✅ 5-fold cross-validation (APTOS)
+- ✅ External validation (Messidor-2)
+- ✅ Grad-CAM & SHAP visualizations
 
-## 📊 Explainability
+---
 
-- Grad-CAM used to visualize model attention on fundus images
-- SHAP used to interpret clinical feature importance
+## 🔍 Contents
 
-## 🚀 Deployment Scope
-
-The model is designed for:
-- Clinical decision support
-- Teleophthalmology
-- Mobile and rural screening programs
-
-## 📝 Citation
-
-If you use this work, please cite:
-
+```bash
+📁 DR_Multimodal_Cross_Validation_FIXED.ipynb   # 5-fold APTOS training & eval
+📁 DR_Multimodal_External_Validation.ipynb      # Messidor-2 validation
+📁 DR_Multimodal_Framework_Colab_Notebook.ipynb # Unified pipeline version
+📄 README.md
