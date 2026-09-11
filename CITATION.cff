@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the repository and the associated published work where appropriate."
+title: "Explainable Multimodal Retinal-AI Prototype"
+type: software
+authors:
+  - family-names: "Rahat"
+    given-names: "SK Rakib Ul Islam"
+    orcid: "https://orcid.org/0009-0005-0744-8398"
+repository-code: "https://github.com/skrakibulislamrahat/Multimodal_Framework_Research"
+url: "https://github.com/skrakibulislamrahat/Multimodal_Framework_Research"
+abstract: "Research prototype for image-plus-structured-feature fusion in diabetic-retinopathy severity classification with explainability and external-validation workflows. The repository documents that structured metadata used in the prototype are synthetic."
+keywords:
+  - diabetic retinopathy
+  - multimodal deep learning
+  - explainable AI
+  - Grad-CAM
+  - SHAP
+  - medical imaging
