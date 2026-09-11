@@ -1,39 +1,49 @@
-# Multimodal_Framework_Research
+# Explainable Multimodal Diabetic-Retinopathy Research Prototype
 
-This repository contains the full implementation for the research paper:
+This repository contains an experimental deep-learning workflow that combines **retinal fundus images** with a tabular metadata branch for diabetic-retinopathy modeling and explainability.
 
-**"Explainable Deep Learning Framework for Early Detection of Diabetic Retinopathy in Retinal Imaging: A Scalable Approach for Clinical and Rural Deployment"**
+## What the project implements
 
-### 👥 Authors:
-- Md Reazul Islam Karim  
-- Yasin Arafat  
-- Prof. Makul Mahajan  
-- Prof. Dr. Murtaza Hussain *(Research Advisor)*  
-- SK Rakib Ul Islam Rahat
+- APTOS 2019 retinal fundus images
+- EfficientNetB0 image feature extraction
+- a small MLP/tabular branch
+- late feature fusion for classification
+- Grad-CAM-style image interpretation
+- SHAP-based analysis for the tabular branch
+- cross-validation and Messidor-2 external-validation notebooks tracked separately in this repository
 
----
+## Critical methodological scope
 
-## 🧠 Overview
+The clinical/tabular variables in the original framework notebook are **synthetically generated for architecture prototyping**; they are not observed patient metadata. That distinction is essential. Results from this branch must therefore be interpreted as a proof-of-concept for multimodal fusion mechanics, **not evidence that real clinical metadata improves DR prediction**.
 
-This project presents a multimodal and explainable deep learning framework that combines:
+See [`LIMITATIONS.md`](LIMITATIONS.md) before using or citing this project.
 
-- **High-resolution fundus images** (APTOS 2019)
-- **Simulated clinical metadata** (age, HbA1c, BP, BMI, etc.)
-- **EfficientNetB0** for image feature extraction
-- **MLP** for metadata fusion
-- **Grad-CAM** and **SHAP** for interpretability
+## Repository contents
 
-The model is evaluated through:
-- ✅ 5-fold cross-validation (APTOS)
-- ✅ External validation (Messidor-2)
-- ✅ Grad-CAM & SHAP visualizations
+```text
+.
+├── DR_Multimodal_Framework_Colab_Notebook.ipynb   # original fusion prototype
+├── DR_Multimodal_Cross_Validation_FIXED.ipynb     # cross-validation workflow
+├── DR_Multimodal_External_Validation.ipynb        # external-validation workflow
+├── LIMITATIONS.md
+├── requirements.txt
+└── README.md
+```
 
----
+## Research question
 
-## 🔍 Contents
+The useful question represented by this repository is architectural: **how can retinal-image features and structured covariates be fused and interpreted in a single DR modeling pipeline?**
 
-```bash
-📁 DR_Multimodal_Cross_Validation_FIXED.ipynb   # 5-fold APTOS training & eval
-📁 DR_Multimodal_External_Validation.ipynb      # Messidor-2 validation
-📁 DR_Multimodal_Framework_Colab_Notebook.ipynb # Unified pipeline version
-📄 README.md
+A clinically valid answer would require real, patient-linked covariates collected under an appropriate study protocol, leakage-safe data splits, external validation, and calibration analysis.
+
+## Reproducibility
+
+The notebooks were developed in Google Colab and use local Google Drive paths. Raw APTOS/Messidor image data and model checkpoints are not distributed in Git. Users should update data paths and record package versions, hardware, random seeds, and dataset releases when reproducing experiments.
+
+## Research status
+
+This is a **research prototype**, not a clinical multimodal validation study. The repository is retained because the fusion architecture, interpretability workflow, and evaluation scaffolding are useful research artifacts when that limitation is stated explicitly.
+
+## Responsible use
+
+This code is for research and education. It is not a clinical diagnostic system and should not be used for patient-care decisions.
